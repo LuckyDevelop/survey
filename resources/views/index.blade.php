@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6 text-md-start text-center py-6">
-                    <h1 class="mb-4 fs-9 fw-bold">Sistem Informasi Survey</h1>
+                    <h1 class="mb-4 fs-9 fw-bold">SISTEM INFORMASI SURVEY POLTEKSSN</h1>
                     <p class="mb-6 lead text-secondary">Membawa pendidikan ke arah yang lebih baik melalui survey.
                         Dengan staf akademik dan mahasiswa sebagai fokus utama, sistem kami
                         memberdayakan institusi pendidikan untuk mengumpulkan, menganalisis, dan bertindak atas data
@@ -39,7 +39,7 @@
     <!-- <section> close ============================-->
     <!-- ==========================================
 
-                <!-- ============================================-->
+                                        <!-- ============================================-->
     <!-- <section> begin ============================-->
     <section class="pt-5" id="validation">
 

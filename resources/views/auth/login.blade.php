@@ -1,49 +1,72 @@
 @extends('layouts.app')
 
-@section('content')
-    <div class="col-md-8 mx-auto">
-        <div class="card mb-0">
-            <div class="card-body">
-                {{-- <a href="./index.html" class="text-nowrap logo-img text-center d-block py-3 w-100">
-            <img src="assets/images/logos/dark-logo.svg" width="180" alt="">
-        </a> --}}
+@section('loginContent')
+    <div id="app">
+        <section class="section">
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
 
-                @if ($errors->any())
-                    <div class="alert alert-danger" role="alert">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h4>Login</h4>
+                            </div>
 
-                <form method="POST" action="{{ route('login') }}">
-                    @csrf
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email / NPM / NIP</label>
-                        <input type="email" class="form-control" name="email" value="{{ old('email') }}" required
-                            autocomplete="email" autofocus>
-                    </div>
+                            <div class="card-body">
 
-                    <div class="mb-4">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control" name="password" value="{{ old('password') }}" required
-                            autocomplete="password">
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <div class="form-check">
-                            <input class="form-check-input primary" type="checkbox" value="" id="flexCheckChecked"
-                                checked>
-                            <label class="form-check-label text-dark" for="flexCheckChecked">
-                                Ingat perangkat ini ?
-                            </label>
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+
+                                <form method="POST" action="{{ route('login') }}" class="needs-validation" novalidate="">
+                                    @csrf
+                                    <div class="form-group">
+                                        <label for="username">Username / NPM / NIDN</label>
+                                        <input id="username" type="text" class="form-control" name="username"
+                                            tabindex="1" required autofocus>
+                                        <div class="invalid-feedback">
+                                            Silahkan Masukkan Email Yang Benar
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="d-block">
+                                            <label for="password" class="control-label">Password</label>
+                                        </div>
+                                        <input id="password" type="password" class="form-control" name="password"
+                                            tabindex="2" required>
+                                        <div class="invalid-feedback">
+                                            Silahkan Masukkan Password Yang Benar
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" name="remember" class="custom-control-input"
+                                                tabindex="3" id="remember-me">
+                                            <label class="custom-control-label" for="remember-me">Remember Me</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
+                                            Login
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+
                         </div>
-                        <a class="text-primary fw-bold" href="http://127.0.0.1:8000/forgot-password">Lupa Password ?</a>
                     </div>
-                    <button type="submit" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Sign In</button>
-                </form>
+                </div>
             </div>
-        </div>
+        </section>
     </div>
+
 @endsection

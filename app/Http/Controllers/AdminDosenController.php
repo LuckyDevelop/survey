@@ -60,6 +60,7 @@ class AdminDosenController extends Controller
         User::create([
             'name'      => $request->name,
             'no_induk'  => $request->no_induk,
+            'username'  => $request->no_induk,
             'email'     => $request->email,
             'prodi_id'  => $request->prodi_id,
             'role_id'   => $request->role_id,
@@ -101,13 +102,13 @@ class AdminDosenController extends Controller
             'prodi_id.required' => 'Form tidak boleh kosong !',
         ]);
 
-        if ($request->no_induk != $dosen->no_induk) {
+        if ($request->no_induk != $dosen->no_induk && $request->email != $dosen->email) {
             $validator = Validator::make($request->all(), [
                 'no_induk'          => 'unique:users',
-                'email'             => 'unique:users,email', // Tambahkan validasi unik untuk email di sini
+                'email'             => 'unique:users,email',
             ], [
                 'no_induk.unique'   => 'NIDN tidak boleh sama !',
-                'email.unique'      => 'Email sudah digunakan !', // Pesan untuk validasi unik email
+                'email.unique'      => 'Email sudah digunakan !',
             ]);
         }
 
@@ -118,6 +119,7 @@ class AdminDosenController extends Controller
         $dosen->update([
             'name'      => $request->name,
             'no_induk'  => $request->no_induk,
+            'username'  => $request->no_induk,
             'email'     => $request->email,
             'prodi_id'  => $request->prodi_id,
         ]);

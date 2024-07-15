@@ -1,34 +1,55 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login Aplikasi</title>
-    <link rel="shortcut icon" type="image/png" href="/admin/assets/images/logos/favicon.png" />
-    <link rel="stylesheet" href="/admin/assets/css/styles.min.css" />
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <title>Login &mdash;</title>
+
+    <!-- General CSS Files -->
+    <link rel="stylesheet" href="/admin/assets/modules/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/admin/assets/modules/fontawesome/css/all.min.css">
+
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="/admin/assets/modules/bootstrap-social/bootstrap-social.css">
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="/admin/assets/css/style.css">
+    <link rel="stylesheet" href="/admin/assets/css/components.css">
+    <!-- Start GA -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-94034622-3');
+    </script>
+    <!-- /END GA -->
 </head>
 
 <body>
-    <!--  Body Wrapper -->
-    <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
-        data-sidebar-position="fixed" data-header-position="fixed">
-        <div
-            class="position-relative overflow-hidden radial-gradient min-vh-100 d-flex align-items-center justify-content-center">
-            <div class="d-flex align-items-center justify-content-center w-100">
-                <div class="row justify-content-center w-100">
-                    <div class="col-md-8 col-lg-6 col-xxl-3">
+    @yield('loginContent')
 
-                        @yield('content')
+    <!-- General JS Scripts -->
+    <script src="/admin/assets/modules/jquery.min.js"></script>
+    <script src="/admin/assets/modules/popper.js"></script>
+    <script src="/admin/assets/modules/tooltip.js"></script>
+    <script src="/admin/assets/modules/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/admin/assets/modules/nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="/admin/assets/modules/moment.min.js"></script>
+    <script src="/admin/assets/js/stisla.js"></script>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    <script src="/admin/assets/libs/jquery/dist/jquery.min.js"></script>
-    <script src="/admin/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JS Libraies -->
+
+    <!-- Page Specific JS File -->
+
+    <!-- Template JS File -->
+    <script src="/admin/assets/js/scripts.js"></script>
+    <script src="/admin/assets/js/custom.js"></script>
 </body>
 
 </html>

@@ -20,10 +20,13 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        'password',
+        'username',
         'no_induk',
+        'password',
         'role_id',
-        'prodi_id'
+        'prodi_id',
+        'status_pegawai',
+        'jabatan'
     ];
 
     /**
@@ -48,11 +51,16 @@ class User extends Authenticatable
 
     public function role()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Role::class);
     }
 
     public function prodi()
     {
         return $this->belongsTo(ProgramStudi::class);
+    }
+
+    public function jawabans()
+    {
+        return $this->hasMany(Jawaban::class, 'responden_id');
     }
 }

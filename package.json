@@ -12,5 +12,9 @@
         "laravel-vite-plugin": "^1.0.0",
         "sass": "^1.56.1",
         "vite": "^5.0.0"
+    },
+    "dependencies": {
+        "chartjs-node-canvas": "^4.1.6",
+        "chartjs-to-image": "^1.2.2"
     }
 }

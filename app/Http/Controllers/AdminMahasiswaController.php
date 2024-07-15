@@ -60,6 +60,7 @@ class AdminMahasiswaController extends Controller
         User::create([
             'name'      => $request->name,
             'no_induk'  => $request->no_induk,
+            'username'  => $request->no_induk,
             'email'     => $request->email,
             'prodi_id'  => $request->prodi_id,
             'role_id'   => $request->role_id,
@@ -104,10 +105,10 @@ class AdminMahasiswaController extends Controller
         if ($request->no_induk != $mahasiswa->no_induk) {
             $validator = Validator::make($request->all(), [
                 'no_induk'          => 'unique:users',
-                'email'             => 'unique:users,email', // Tambahkan validasi unik untuk email di sini
+                'email'             => 'unique:users,email',
             ], [
                 'no_induk.unique'   => 'NPM tidak boleh sama !',
-                'email.unique'      => 'Email sudah digunakan !', // Pesan untuk validasi unik email
+                'email.unique'      => 'Email sudah digunakan !',
             ]);
         }
 
@@ -118,6 +119,7 @@ class AdminMahasiswaController extends Controller
         $mahasiswa->update([
             'name'      => $request->name,
             'no_induk'  => $request->no_induk,
+            'username'  => $request->no_induk,
             'email'     => $request->email,
             'prodi_id'  => $request->prodi_id,
         ]);

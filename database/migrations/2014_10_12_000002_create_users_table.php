@@ -15,12 +15,15 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->biginteger('no_induk')->unique();
+            $table->string('username')->unique();
+            $table->biginteger('no_induk')->unique()->nullable();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->text('password');
             $table->foreignId('role_id');
-            $table->unsignedBigInteger('prodi_id');
+            $table->unsignedBigInteger('prodi_id')->nullable();
             $table->foreign('prodi_id')->references('id')->on('program_studis')->onDelete('cascade');
+            $table->string('status_pegawai', 150)->nullable();
+            $table->string('jabatan', 150)->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
