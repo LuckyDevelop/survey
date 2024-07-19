@@ -93,9 +93,9 @@
     </div>
 
     <script>
-        window.onload = function() {
-            $('#responden_id').select2();
-        };
+        // window.onload = function() {
+        //     $('#responden_id').select2();
+        // };
     </script>
 
     <script>
