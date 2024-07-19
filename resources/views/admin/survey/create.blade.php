@@ -58,7 +58,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="responden_id">Tentukan Responden</label>
-                                        <select class="responden_id" id="responden_id" name="responden_id"
+                                        <select class="responden_id form-control" id="responden_id" name="responden_id"
                                             style="width: 100%">
                                             <option value=""> -- Pilih Responden -- </option>
                                             @foreach ($respondens as $responden)
